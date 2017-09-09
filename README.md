@@ -7,7 +7,7 @@
 GeoTux GIS Server in Ubuntu Xenial with Mapserver, Mapcache, QGIS Server, Tileserver-PHP and Web Map Clients. 
 
 
-.. image:: https://i.imgur.com/hnSYgOF.png
+![GeoTux GIS Server](https://i.imgur.com/hnSYgOF.png)
 
 Server applications:
 
@@ -38,4 +38,4 @@ $ docker run -d -p 8280:80 -p 8281:3001 -p 8282:3002 -v "gisdata":/gisdata --nam
 
 ## Documentation
 
-Explore the documentation in http://localhost/8280
+Explore the documentation in http://localhost:8280
