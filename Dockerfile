@@ -163,6 +163,7 @@ WORKDIR /gisdata
 VOLUME [ "/gisdata/projects", "/gisdata/tiles", "/gisdata/metadata" ]
 
 EXPOSE 3001
+EXPOSE 3002
 EXPOSE 80
 
 CMD ["bash", "apache2.sh"]
