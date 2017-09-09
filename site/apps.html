@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Aplicaciones - GeoTux GIS Server</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	</head>
+
+	<body>
+		<section class="head">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<header class="header">
+							<div class="inner">
+								<!-- Logo -->
+								<a href="#menu" class="nav-bars">
+									<img src="images/nav_icon.svg" class="img-responsive" alt="Collapsable Navbar">
+								</a>
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.png" alt="Title" /></span><span class="title">GeoTux GIS Server</span>
+								</a>
+							</div>
+						</header>
+						<!-- Menu -->
+						<nav id="menu">
+							<h2>Menú</h2>
+							<ul>
+								<li><a href="index.html">Inicio</a></li>
+								<li><a href="apps.html">Aplicaciones</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container">
+			<div id="main">
+				<h1>Aplicaciones</h1>
+			</div>
+
+			<section class="image-text">
+				<h2 id="qgis-server">QGIS Server</h2>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<img src="images/1.jpg" class="img-responsive" alt="Responsive image"/>
+						</div>
+						<div class="col-md-8">
+							<p class="image-text-text">QGIS Server ofrece un servicio web de mapas (WMS y WFS) basado en la librerías de la aplicación de escritorio de QGIS. Se pueden publicar mapas y plantillas de impresión creadas en QGIS como mapas web simplemente copiando el fichero de proyecto QGIS en el directorio del servidorr, y ver así los mapas web exactamente como en el escritorio. QGIS Server normalmente es ejecutado como un módulo CGI/FastCGI dentro de Apache Webserver.</p>
+							<p><strong>Versión</strong>: 2.18.12</p>
+							<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/cgi-bin/qgis_mapserv.fcgi?">http://localhost:8280/cgi-bin/qgis_mapserv.fcgi?</a></p>
+							<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/projects</code> para los proyectos de QGIS</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		<section class="image-text">
+			<h2 id="mapserver">Mapserver</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/2.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">MapServer es un motor de renderización de datos geográficos Open Source escrito en C. Más allá de la navegación por datos GIS, MapServer permite crear “mapas de imágenes geográficas”, es decir, mapas de contenidos para los usuarios.</p>
+						<p><strong>Versión</strong>: 7.0.0</p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/cgi-bin/mapserv">http://localhost:8280/cgi-bin/mapserv</a></p>
+						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/projects</code> para los proyectos de Mapserver</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-text">
+			<h2 id="mapcache">Mapcache</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/3.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">MapCache es un servidor que implementa el caché de teselas para acelerar el acceso a las capas WMS. Los objetivos principales es ser rápido y fácil de implementar, esperada de una solución de almacenamiento en caché de teselas.</p>
+						<p><strong>Versión</strong>: 1.6.0</p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/mapcache/demo/wms">http://localhost:8280/mapcache/demo/wms</a></p>
+						<p><strong>Configuración</strong>: Archivo de configuración en <code>/mapcache/mapcache.xml</code></p>
+						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/tiles</code> para el almacenamiento de teselas</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-text">
+			<h2 id="tileserver-php">Tile Server PHP</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/4.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">Alojamiento de carpetas MBTiles y MapTiler con TileJSON, OGC WMTS, interacción UTFGrid e interfaz web. Compatible con QGIS y ESRI ArcGIS. Se ejecuta en cualquier alojamiento web Apache+PHP. Alojamiento de MapBox Studio Vector Tiles.</p>
+						<p><strong>Versión</strong>: Master</p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/tileserver-php/tileserver.php">http://localhost:8280/tileserver-php/tileserver.php</a></p>
+						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/tiles</code> para el almacenamiento de teselas</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-text">
+			<h2 id="pycsw">pycsw</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/5.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">pycsw una implementación en python del Estándar de servicio de catálogos web (CSW) de OGC. El proyecto está certificado como que cumple con los estándares OGC, y es una referencia de implementación OGC. El estándar CSW define interfaces comunes para encontrar, explorar y consultar metadatos sobre datos espaciales, servicios web y recursos relacionados.</p>
+						<p><strong>Versión</strong>: 2.0.3</p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/pycsw">http://localhost:8280/pycsw</a></p>
+						<p><strong>Configuración</strong>: Archivo de configuración en <code>/srv/pycsw/default.cfg</code></p>
+						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/metadata</code> para el cargue de metadatos</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="image-text">
+			<h2 id="qwc2">QGIS Web Client</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/6.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">Un cliente Web para el proyecto de QGIS Server.</p>
+						<p><strong>Versión</strong>: Master</p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/qwc2">http://localhost:8280/qwc2</a></p>
+						<p><strong>Configuración</strong>: Carpeta de configuración en <code>/srv/qwc2-demo-app</code></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-text">
+			<h2 id="lizmap-web">Lizmap Web Client</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/7.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">La aplicación de Lizmap Web genera dinámicamente una aplicación visor de mapas web (php/html/css/js) con la ayuda de QGIS Server (QGIS como Servidor OGC). Puede configurar un mapa web por proyecto QGIS con el plugin LizMap de QGIS. La aplicación web Lizmap debe estar instalada en el servidor.</p>
+						<p><strong>Versión</strong>: 3.1.3</p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/websig/lizmap/www/">http://localhost:8280/websig/lizmap/www/</a></p>
+						<p><strong>Configuración</strong>: Carpeta de configuración en <code>/var/www/websig</code></p>
+						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/projects</code> para los proyectos de QGIS Server</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-text">
+			<h2 id="mapstore2">MapStore2</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/8.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">MapStore 2 es un framework para crear aplicaciones de visor de mapas web utilizando librerías de cliente de mapas estándar, como OpenLayers 3 y Leaflet.</p>
+						<p><strong>Versión</strong>: Master</p>
+						<p><strong>Servicio</strong>: Iniciar desde la consola de comandos <code>mapstore2.sh</code></p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8281">http://localhost:8281</a></p>
+						<p><strong>Configuración</strong>: Carpeta de configuración en <code>/srv/Mapstore2</code></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-text">
+			<h2 id="terriajs-map">TerriaJS Map</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="images/9.jpg" class="img-responsive" alt="Responsive image"/>
+					</div>
+					<div class="col-md-8">
+						<p class="image-text-text">TerriaJS es un Framework de código abierto para construir exploradores de datos espaciales federados para la web. Reúna su catálogo de conjuntos de datos geoespaciales con una combinación de despliegue y consulta de servicios de catálogos en línea, como CKAN, CSW, WMS, WFS y ArcGIS.</p>
+						<p><strong>Versión</strong>: Master</p>
+						<p><strong>Servicio</strong>: Iniciar desde la consola de comandos <code>terriamap.sh</code></p>
+						<p><strong>Enlace Web</strong>: <a href="http://localhost:8282">http://localhost:8282</a></p>
+						<p><strong>Configuración</strong>: Carpeta de configuración en <code>/srv/TerriaMap</code></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+	</div>
+
+		<section class="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<h1>COLABORADORES</h1>
+								<div class="row">
+									<div class="col-md-12">
+											 <div class="col-md-4 testImage">
+													 <img src="https://avatars2.githubusercontent.com/u/545152?v=4&s=120" class="img-circle center-block" alt="CSS3">
+											 </div>
+											 <div class="col-md-8 testDescription pull-right">
+													 <h3>Samuel Mesa</h3>
+													Ingeniero Catastral y Geodesta. Docente de la Universidad Nacional de Colombia - Sede Bogotá
+											 </div>
+									 </div>
+								</div>
+						</div>
+					<div class="col-md-4">
+						<h1>DESARROLLO</h1>
+							<p class="contact-desc">
+								GeoTux - Soluciones Geoinformática Libres.
+							</p>
+							<p><Strong>Sitio Web: </Strong> <a href="http://geotux.co" target="_blank">http://geotux.co</a><br />
+							<Strong>Github:</Strong><a href="https://github.com/GeoTux2/docker-geotuxserver" target="_blank"> docker-geotuxserver</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="social-contact-icon">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-xs-12">
+						<ul class="text-center social-contact">
+							<li class="social-icons">
+							<a href="http://geotux.co" target="_blank" class="icon style2 fa-link"><span class="label">Sitio Web</span></a>
+							</li>
+							<li class="social-icons">
+								<a href="https://twitter.com/geotux2" target="_blank" class="icon style2 fa-twitter"><span class="label">Twitter</span></a>
+							</li>
+							<li class="social-icons">
+								<a href="https://github.com/GeoTux2" target="_blank" class="icon style2 fa-github"><span class="label">Github</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="footer">
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-8 col-xs-9">
+							<p class="right-color">&copy; Diseño copyright 2017. Todos los derechos reservados del tema a <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+						</div>
+						<div class="col-sm-4 col-xs-3" align="right">
+							<a href="#" id="back-to-top" class="top text-right" >TOP <i class="fa fa-angle-up" aria-hidden="true"></i> </a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</section>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery-3.1.0.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+		<script src="assets/js/script.js"></script>
+
+		<!--  ===== Scroll to Top ====  -->
+		<script>
+			if ($('#back-to-top').length) {
+			    $('#back-to-top').on('click', function (e) {
+			        e.preventDefault();
+			        $('html,body').animate({
+			            scrollTop: 0
+			        }, 700);
+			    });
+			}
+		</script>
+
+	</body>
+</html>
