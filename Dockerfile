@@ -77,6 +77,8 @@ RUN cd /var/www && git clone https://github.com/klokantech/tileserver-php.git
 ADD https://github.com/3liz/lizmap-web-client/archive/$LIZMAPVERSION.zip /var/www/
 RUN /usr/local/bin/setup_lizmap.sh
 
+RUN cd /srv && git clone https://github.com/klokantech/tileserver-php.git
+
 
 # Install TerriaMap
 
@@ -130,8 +132,8 @@ RUN mkdir /mapcache
 RUN mkdir /gisdata
 RUN mkdir /gisdata/projects
 RUN mkdir /gisdata/metadata
-RUN mkdir /gisdata/tiles
 RUN chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
+ADD mapcache.xml /srv/mapcache.xml
 ADD mapcache.xml /mapcache/mapcache.xml
 
 #RUN pycsw-admin.py -c load_records -f default.cfg -p /gisdata/metadata
@@ -160,7 +162,7 @@ RUN apt-get purge -y software-properties-common build-essential cmake ; \
 RUN apt autoremove
 
 WORKDIR /gisdata
-VOLUME [ "/gisdata/projects", "/gisdata/tiles", "/gisdata/metadata" ]
+VOLUME [ "/gisdata/projects", "/mapcache/", "/gisdata/metadata", "/var/www/tileserver-php" ]
 
 EXPOSE 3001
 EXPOSE 3002

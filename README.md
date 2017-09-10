@@ -4,7 +4,7 @@
 
 [![Travis](https://travis-ci.org/yjacolin/docker-mapcache.svg)](https://travis-ci.org/samtux/docker-geotuxserver)
 
-GeoTux GIS Server in Ubuntu Xenial with Mapserver, Mapcache, QGIS Server, Tileserver-PHP and Web Map Clients. 
+GeoTux GIS Server in Ubuntu Xenial with Mapserver, Mapcache, QGIS Server, Tileserver-PHP and Web Map Clients.
 
 
 ![GeoTux GIS Server](https://i.imgur.com/hnSYgOF.png)
@@ -33,7 +33,7 @@ $ docker build -t samtux/geotuxserver .
 ## Run
 
 ```
-$ docker run -d -p 8280:80 -p 8281:3001 -p 8282:3002 -v "gisdata":/gisdata --name geotuxserver samtux/geotuxserver
+$ docker run -d -p 8280:80 -p 8281:3001 -p 8282:3002 -v "gisdata":/gisdata -v "teselas":/var/www/tileserver-php -v "mapcache":/mapcache --name geotuxserver samtux/geotuxserver
 ```
 
 ## Documentation
