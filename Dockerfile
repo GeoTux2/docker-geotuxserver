@@ -131,6 +131,7 @@ RUN cd /srv/ && git clone --recursive https://github.com/geosolutions-it/MapStor
 RUN mkdir /mapcache
 RUN mkdir /gisdata
 RUN mkdir /gisdata/projects
+RUN mkdir /gisdata/tiles
 RUN mkdir /gisdata/metadata
 RUN chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
 ADD mapcache.xml /srv/mapcache.xml
