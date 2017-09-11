@@ -33,6 +33,9 @@ else
   cp -rf /srv/qgis-web-client/data /gisdata/projects/data
 fi
 
+# Permission for /gisdata
+chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
+
 # Apache server init
 if [ ! -d "$APACHE_RUN_DIR" ]; then
 	mkdir "$APACHE_RUN_DIR"
