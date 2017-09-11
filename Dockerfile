@@ -64,6 +64,17 @@ RUN ldconfig
 RUN cp /usr/bin/mapserv /usr/lib/cgi-bin/
 
 
+# Create directories
+RUN mkdir /mapcache
+RUN mkdir /gisdata
+RUN mkdir /gisdata/projects
+RUN mkdir /gisdata/tiles
+RUN mkdir /gisdata/metadata
+RUN chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
+ADD mapcache.xml /srv/mapcache.xml
+ADD mapcache.xml /mapcache/mapcache.xml
+
+
 # Install tileserver-php y Lizmap
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php7.0 libapache2-mod-php7.0 \
     xauth curl libapache2-mod-fcgid php7.0-cgi php7.0-gd php7.0-sqlite \
@@ -110,7 +121,7 @@ RUN cd /srv/pycsw && ./bin/pycsw-admin.py -c setup_db -f default.cfg
 
 # Install QGIS Web Client 1
 
-RUN cd srv && git clone https://github.com/qgis/qgis-web-client.git && \
+RUN cd /srv && git clone https://github.com/qgis/qgis-web-client.git && \
     cp -rf /srv/qgis-web-client/projects /gisdata/projects/demo && \
     cp -rf /srv/qgis-web-client/data /gisdata/projects/data
 
@@ -134,23 +145,16 @@ RUN cd /srv/ && git clone --recursive https://github.com/geosolutions-it/MapStor
     cd /srv/MapStore2 && npm install -g docma && npm cache clean && npm install && \
     sed -i 's/--port 8081/--host 0.0.0.0 --port 3002/g' /srv/MapStore2/package.json
 
-# Create directories
-RUN mkdir /mapcache
-RUN mkdir /gisdata
-RUN mkdir /gisdata/projects
-RUN mkdir /gisdata/tiles
-RUN mkdir /gisdata/metadata
-RUN chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
-ADD mapcache.xml /srv/mapcache.xml
-ADD mapcache.xml /mapcache/mapcache.xml
 
-#RUN pycsw-admin.py -c load_records -f default.cfg -p /gisdata/metadata
+# Copy scripts and configuration files
 
 ADD gisserver.conf /etc/apache2/sites-available/gisserver.conf
 ADD mapcache.load /etc/apache2/mods-available/mapcache.load
 ADD scripts/apache2.sh /usr/local/bin/apache2.sh
 ADD scripts/terriamap.sh /usr/local/bin/terriamap.sh
 ADD scripts/mapstore2.sh /usr/local/bin/mapstore2.sh
+ADD scripts/metadata_database.sh /usr/local/bin/metadata_database.sh
+ADD scripts/metadata_import.sh /usr/local/bin/metadata_import.sh
 COPY site/ /var/www/
 
 RUN a2enmod mapcache
