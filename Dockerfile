@@ -70,7 +70,6 @@ RUN mkdir /gisdata
 RUN mkdir /gisdata/projects
 RUN mkdir /gisdata/tiles
 RUN mkdir /gisdata/metadata
-RUN chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
 ADD mapcache.xml /srv/mapcache.xml
 ADD mapcache.xml /mapcache/mapcache.xml
 
@@ -156,6 +155,7 @@ ADD scripts/mapstore2.sh /usr/local/bin/mapstore2.sh
 ADD scripts/metadata_database.sh /usr/local/bin/metadata_database.sh
 ADD scripts/metadata_import.sh /usr/local/bin/metadata_import.sh
 COPY site/ /var/www/
+RUN chown -R www-data:www-data /gisdata && chmod -R 777 /gisdata
 
 RUN a2enmod mapcache
 RUN a2dissite 000-default
@@ -174,7 +174,7 @@ RUN apt-get purge -y software-properties-common build-essential cmake ; \
 RUN apt autoremove
 
 WORKDIR /gisdata
-VOLUME [ "/gisdata/projects", "/mapcache/", "/gisdata/metadata", "/var/www/tileserver-php" ]
+VOLUME [ "/gisdata/projects", "/gisdata/tiles", "/mapcache/", "/gisdata/metadata", "/var/www/tileserver-php" ]
 
 EXPOSE 3001
 EXPOSE 3002
