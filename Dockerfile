@@ -110,9 +110,9 @@ RUN cd /srv/pycsw && ./bin/pycsw-admin.py -c setup_db -f default.cfg
 
 # Install QGIS Web Client 1
 
-RUN cd srv && git clone https://github.com/qgis/qgis-web-client.git    
-COPY /srv/qgis-web-client/projects /gisdata/projects/demo
-COPY /srv/qgis-web-client/data /gisdata/projects/data
+RUN cd srv && git clone https://github.com/qgis/qgis-web-client.git && \
+    cp -rf /srv/qgis-web-client/projects /gisdata/projects/demo && \
+    cp -rf /srv/qgis-web-client/data /gisdata/projects/data
 
 
 # Install QGIS Web Client 2
