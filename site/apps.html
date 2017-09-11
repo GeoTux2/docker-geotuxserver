@@ -60,7 +60,7 @@
 						<div class="col-md-8">
 							<p class="image-text-text">QGIS Server ofrece un servicio web de mapas (WMS y WFS) basado en la librerías de la aplicación de escritorio de QGIS. Se pueden publicar mapas y plantillas de impresión creadas en QGIS como mapas web simplemente copiando el fichero de proyecto QGIS en el directorio del servidorr, y ver así los mapas web exactamente como en el escritorio. QGIS Server normalmente es ejecutado como un módulo CGI/FastCGI dentro de Apache Webserver.</p>
 							<p><strong>Versión</strong>: 2.18.12</p>
-							<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/cgi-bin/qgis_mapserv.fcgi?">http://localhost:8280/cgi-bin/qgis_mapserv.fcgi?</a></p>
+							<p><strong>Enlace Web</strong>: <a href="/cgi-bin/qgis_mapserv.fcgi?">http://localhost:8280/cgi-bin/qgis_mapserv.fcgi?</a></p>
 							<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/projects</code> para los proyectos de QGIS</p>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 					<div class="col-md-8">
 						<p class="image-text-text">MapServer es un motor de renderización de datos geográficos Open Source escrito en C. Más allá de la navegación por datos GIS, MapServer permite crear “mapas de imágenes geográficas”, es decir, mapas de contenidos para los usuarios.</p>
 						<p><strong>Versión</strong>: 7.0.0</p>
-						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/cgi-bin/mapserv">http://localhost:8280/cgi-bin/mapserv</a></p>
+						<p><strong>Enlace Web</strong>: <a href="/cgi-bin/mapserv">http://localhost:8280/cgi-bin/mapserv</a></p>
 						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/projects</code> para los proyectos de Mapserver</p>
 					</div>
 				</div>
@@ -95,7 +95,7 @@
 					<div class="col-md-8">
 						<p class="image-text-text">MapCache es un servidor que implementa el caché de teselas para acelerar el acceso a las capas WMS. Los objetivos principales es ser rápido y fácil de implementar, esperada de una solución de almacenamiento en caché de teselas.</p>
 						<p><strong>Versión</strong>: 1.6.0</p>
-						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/mapcache/demo/wms">http://localhost:8280/mapcache/demo/wms</a></p>
+						<p><strong>Enlace Web</strong>: <a href="/mapcache/demo/wms">http://localhost:8280/mapcache/demo/wms</a></p>
 						<p><strong>Configuración</strong>: Archivo de configuración en <code>/mapcache/mapcache.xml</code></p>
 						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/tiles</code> para el almacenamiento de teselas</p>
 					</div>
@@ -113,7 +113,7 @@
 					<div class="col-md-8">
 						<p class="image-text-text">Alojamiento de carpetas MBTiles y MapTiler con TileJSON, OGC WMTS, interacción UTFGrid e interfaz web. Compatible con QGIS y ESRI ArcGIS. Se ejecuta en cualquier alojamiento web Apache+PHP. Alojamiento de MapBox Studio Vector Tiles.</p>
 						<p><strong>Versión</strong>: Master</p>
-						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/tileserver-php/tileserver.php">http://localhost:8280/tileserver-php/tileserver.php</a></p>
+						<p><strong>Enlace Web</strong>: <a href="/tileserver-php/tileserver.php">http://localhost:8280/tileserver-php/tileserver.php</a></p>
 						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/tiles</code> para el almacenamiento de teselas</p>
 					</div>
 				</div>
@@ -130,9 +130,10 @@
 					<div class="col-md-8">
 						<p class="image-text-text">pycsw una implementación en python del Estándar de servicio de catálogos web (CSW) de OGC. El proyecto está certificado como que cumple con los estándares OGC, y es una referencia de implementación OGC. El estándar CSW define interfaces comunes para encontrar, explorar y consultar metadatos sobre datos espaciales, servicios web y recursos relacionados.</p>
 						<p><strong>Versión</strong>: 2.0.3</p>
-						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/pycsw">http://localhost:8280/pycsw</a></p>
+						<p><strong>Enlace Web</strong>: <a href="/pycsw">http://localhost:8280/pycsw</a></p>
 						<p><strong>Configuración</strong>: Archivo de configuración en <code>/srv/pycsw/default.cfg</code></p>
 						<p><strong>Instrucciones</strong>: Usar la unidad <code>/gisdata/metadata</code> para el cargue de metadatos</p>
+						<p><strong>Comandos</strong>: Para crear la base de datos con el comando <code>metadata_database</code>. Para importar los XML de metadatos usar el comando <code>metadata_import</code></p>
 					</div>
 				</div>
 			</div>
@@ -149,7 +150,8 @@
 					<div class="col-md-8">
 						<p class="image-text-text">Un cliente Web para el proyecto de QGIS Server.</p>
 						<p><strong>Versión</strong>: Master</p>
-						<p><strong>Enlace Web</strong>: <a href="http://localhost:8280/qwc2">http://localhost:8280/qwc2</a></p>
+						<p><strong>Enlace Web QWC1</strong>: <a href="/qwc/qgiswebclient.html?map=/gisdata/projects/demo/helloworld.qgs">http://localhost:32782/qwc/qgiswebclient.html?map=/gisdata/projects/demo/helloworld.qgs</a></p>
+						<p><strong>Enlace Web QWC2</strong>: <a href="/qwc2">http://localhost:8280/qwc2</a></p>
 						<p><strong>Configuración</strong>: Carpeta de configuración en <code>/srv/qwc2-demo-app</code></p>
 					</div>
 				</div>

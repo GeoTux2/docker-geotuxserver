@@ -22,6 +22,17 @@ else
   cp /srv/mapcache.xml /mapcache/mapcache.xml
 fi
 
+# Test projects QGIS
+qgis="/gisdata/projects/demo/helloworld.qgs"
+if [ -f "$qgis" ]
+then
+  echo "$qgis projects found in the volume."
+else
+  echo "Copying qgis projects into volume..."
+  cp -rf /srv/qgis-web-client/projects /gisdata/projects/demo
+  cp -rf /srv/qgis-web-client/data /gisdata/projects/data
+fi
+
 # Apache server init
 if [ ! -d "$APACHE_RUN_DIR" ]; then
 	mkdir "$APACHE_RUN_DIR"
